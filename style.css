@@ -1,0 +1,1035 @@
+/************************ Defines custom CSS variables for theming. *************************/
+:root {
+    --txt-transition: .3s;
+    --sec-color: #c94699;
+    --bg-color: #2c3135;
+    --section-color: #343b40;
+    --sub-title-size: 2rem;
+}
+
+/************************* This sets the font family for the body  ***************************/
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/****************** Resets margin and padding to 0 for consistent styling ********************/
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/************* Applies flex display to multiple HTML elements for flexible layout. *************/
+.d-content,
+.d-header,
+.d-wrapper,
+.main-logo,
+.nav-bar,
+.nav-bar ul,
+.dropdown-menu,
+.contact,
+.contact i,
+.content,
+.content .wrapper,
+.btn-gallery,
+.content .text-wrapper,
+.gallery,
+.gallery .text-wrapper,
+.gallery-sorting ul,
+.gallery-sorting a,
+.art,
+.painting,
+.painting-wrapper,
+.painting-title,
+.column,
+.blog,
+.blog-posts,
+.blog-posts .row,
+.blog-posts .col,
+.blog-posts .btn,
+.blog-posts .text-wrapper,
+.about,
+.about-info,
+footer,
+footer .wrapper,
+footer .col {
+    display: flex;
+}
+
+.d-content,
+.dropdown-menu,
+.content .text-wrapper,
+.gallery,
+.gallery .text-wrapper,
+.painting-title,
+.column,
+.blog,
+.blog-posts,
+.blog-posts .col,
+.blog-posts .text-wrapper,
+.about,
+.about-info,
+footer .col {
+    flex-direction: column;
+}
+
+.d-header,
+.contact i,
+.contact .wrapper,
+.btn-gallery,
+.content .text-wrapper,
+.gallery-sorting a,
+.art,
+.painting,
+.painting-title,
+.blog-posts .col,
+.blog-posts .btn,
+.about-info,
+footer {
+    justify-content: center;
+}
+
+.d-header,
+.d-wrapper,
+.main-logo,
+.nav-bar,
+.nav-bar ul,
+.contact i,
+.content .text-wrapper,
+.content .wrapper,
+.btn-gallery,
+.gallery,
+.gallery .text-wrapper,
+.gallery-sorting a,
+.painting-title,
+.column,
+.blog,
+.blog-posts .col,
+.blog-posts .btn,
+.blog-posts .text-wrapper,
+.about,
+.about-info,
+footer .wrapper {
+    align-items: center;
+}
+
+/***************************** main .d-content begins here ***************************/
+
+.main-logo {
+    width: 200px;
+    margin-left: 10%;
+
+}
+
+.logo-white {
+    display: none;
+
+}
+
+.logo-black,
+.logo-white {
+    width: 100%;
+}
+
+.main-d-content {
+    background-color: var(--bg-color);
+    background-image: url(photos/artist\ photo.jpg);
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+
+.d-header {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.d-header-solid {
+    background-color: #000000c1;
+    transition: 0.5s;
+}
+
+.d-header-solid .logo-white {
+    display: flex;
+}
+
+.d-header-solid .logo-black {
+    display: none;
+}
+
+
+
+.d-wrapper {
+    width: 90%;
+    justify-content: space-between;
+}
+
+/***************************** .hamb-menu, styles the hamburger menu button ***************************/
+.hamb-menu {
+    color: white;
+    font-size: 1.4rem;
+    margin: 3px 0 0 13px;
+    display: none;
+
+}
+
+/********************************** styles .nav-bar when it has the 'active' class  ********************************/
+.nav-bar:is(.active) {
+    width: 100vw;
+    height: 200px;
+    background-color: #000000c1;
+    position: absolute;
+    top: -64px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.nav-bar:is(.active) ul {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.d-header:is(.active) {
+    background-color: #000000c1;
+    transition: 0s;
+}
+
+/********************************* Hides the .logo-black when the .d-header is active   **************************/
+.d-header:is(.active) .logo-black {
+    display: none;
+}
+
+/********************************* Shows the .logo-white when the .d-header is active ****************************/
+.d-header:is(.active) .logo-white {
+    display: flex;
+}
+
+/************************************************ nav .nav-bar ************************************************/
+.nav-bar {
+    margin-left: auto;
+    position: relative;
+}
+
+.nav-bar ul li {
+    list-style-type: none;
+    margin: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    transition: var(--txt-transition);
+    font-size: 1.1rem;
+}
+
+.nav-bar i {
+    font-size: .9rem;
+}
+
+.nav-bar a:hover,
+.nav-bar a:hover i {
+    color: var(--sec-color);
+}
+
+.nav-bar i {
+    height: 10px;
+    width: 10px;
+    color: white;
+    transition: var(--txt-transition);
+}
+
+/************************************** .dropdown-menu ********************************/
+
+.dropdown-menu {
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    align-items: flex-start !important;
+    display: none !important;
+    transition: .4s;
+}
+
+.dropdown-menu .dropdown-sorting {
+    color: black;
+    font-size: .8rem;
+    scroll-behavior: smooth;
+}
+
+.dropdown-menu li {
+    margin: 15px !important;
+}
+
+/************************* Shows .dropdown-menu on hover of parent element *******************/
+.nav-bar .dropdown:hover .dropdown-menu {
+    display: flex !important;
+}
+
+
+/**************************************** header .contact ***********************************/
+.contact a {
+    text-decoration: none;
+    margin: 10px;
+}
+
+.contact {
+    margin-left: 30px;
+}
+
+.contact i {
+    font-size: 1.1rem;
+    color: var(--sec-color);
+    transition: var(--txt-transition);
+
+}
+
+.contact a:hover i {
+    color: var(--sec-color);
+    transform: scale(120%);
+}
+
+/**************************************** section .content ***********************************/
+.content {
+    min-height: 100vh;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.content .wrapper {
+    width: 60%;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.content .text-wrapper {
+    width: 65%;
+    min-height: 80%;
+
+}
+
+.content .text-wrapper h3 {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 300;
+
+}
+
+.content .text-wrapper h1 {
+    color: var(--sec-color);
+    font-size: 3rem;
+    margin: 30px 0;
+
+}
+
+
+/***************************** .txt-wrapper button .btn-gallery **************************/
+.btn-gallery {
+    width: 140px;
+    height: 40px;
+    color: white;
+    border: 2px solid var(--sec-color);
+    text-decoration: none;
+    transition: var(--txt-transition);
+
+}
+
+.btn-gallery:hover {
+    background-color: var(--sec-color);
+}
+
+/*********************************** section .gallery  ************************************/
+.gallery {
+    width: 100%;
+    background-color: var(--section-color);
+    height: 300px;
+    box-sizing: border-box;
+}
+
+.gallery .text-wrapper {
+    text-align: center;
+    margin-top: 50px;
+    border-bottom: 2px solid #44474a8f;
+}
+
+.gallery .text-wrapper h2 {
+    font-size: 4.4rem;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+}
+
+.gallery .text-wrapper p {
+    color: white;
+    font-size: 1.2rem;
+    margin: 15px 0 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+}
+
+.gallery-sorting ul li {
+    list-style-type: none;
+    margin: 0 30px;
+}
+
+.gallery-sorting ul {
+    margin-top: 40px;
+}
+
+.gallery-sorting a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    border: 2px solid var(--sec-color);
+    display: flex;
+    padding: 10px 10px;
+    transition: var(--txt-transition);
+}
+
+.gallery-sorting a:hover {
+    background-color: var(--sec-color);
+}
+
+/************************************ section .art  **********************************/
+.art {
+    width: 100%;
+    background-color: var(--bg-color);
+    background-image: url(photos/background\ texture.jpg);
+    background-position: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.painting-wrapper {
+    width: 95%;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.painting {
+    width: 100%;
+    border: 8px solid #f7f7f5;
+    overflow: hidden;
+    margin-bottom: 25px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+.painting-off {
+    display: none;
+}
+
+.column {
+    width: 22%;
+}
+
+.painting img {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    transition: 1s;
+
+}
+
+/***************************** adds an inner box-shadow to the image  ***********************/
+.painting::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: inset 0 0 10px 3px #1b1b1b40 !important;
+    z-index: 6;
+}
+
+/************** creates a dark overlay over ".painting" on hover using a pseudo-element. *******/
+.painting::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    z-index: 4;
+    background: hsla(0, 0%, 0%, .6);
+    display: none;
+}
+
+.painting:hover::after {
+    display: flex;
+}
+
+/********************** scales up "img" element size inside ".painting" on hover *************/
+.painting:hover img {
+    scale: 120%;
+    overflow: hidden;
+}
+
+/*************************************** div .painting-title  *********************************/
+.painting-title {
+    width: 100%;
+    height: 70px;
+    bottom: -75px;
+    position: absolute;
+    background-color: rgba(22, 22, 22, 0.39);
+    transition: .7s;
+    z-index: 5;
+
+}
+
+.painting:hover .painting-title {
+    bottom: 0;
+}
+
+.painting-title h4 {
+    margin: 8px;
+    color: white;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+
+.painting-title p {
+    color: white;
+    font-weight: 200;
+}
+
+/*************************************** section .blog ***********************************/
+.blog {
+    width: 100%;
+    background-color: var(--section-color);
+    height: 220px;
+    box-sizing: border-box;
+}
+
+.blog .text-wrapper {
+    text-align: center;
+    margin-top: 50px;
+    border-bottom: 2px solid #44474a8f;
+}
+
+.blog .text-wrapper h2 {
+    font-size: 4.4rem;
+    color: white;
+    font-weight: 100;
+}
+
+.blog .text-wrapper p {
+    color: white;
+    font-size: 1.2rem;
+    margin: 15px 0 20px;
+    font-weight: 300;
+}
+
+/*********************************** section .blog-posts  *******************************/
+.blog-posts .row {
+    width: 100%;
+}
+
+.blog-posts .col {
+    width: 50%;
+    height: 450px;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.blog-posts .image {
+    background-image: url(photos/Realism\ -\ Henri\ BIVA\,\ Matin\ à\ Villeneuve.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.blog-posts .image2 {
+    background-image: url(photos/expressionism\ -\ edvard\ munch\ the\ scream.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    order: 1;
+}
+
+.blog-posts .image3 {
+    background-image: url(photos/Claude_Monet\,_Impression\,_soleil_levant.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.blog-posts .image4 {
+    background-image: url(photos/Salvador\ Dali\ -\ The\ Persistence\ of\ Memory.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    order: 1;
+}
+
+.art-info {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: white;
+    margin-top: 550px;
+    transition: 1s;
+    z-index: 3;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.blog-posts .image:hover .art-info,
+.blog-posts .image2:hover .art-info,
+.blog-posts .image3:hover .art-info,
+.blog-posts .image4:hover .art-info {
+    margin-bottom: 190px;
+}
+
+/********************* Creates a frosted glass effect for images in a .blog-posts ************/
+.blog-posts .image::after,
+.blog-posts .image2::after,
+.blog-posts .image3::after,
+.blog-posts .image4::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    background: linear-gradient(to top, hsla(0, 0%, 0%, 0.725), hsla(0, 0%, 0%, 0.062));
+    display: none;
+}
+
+/********************** displays a hidden pseudo-element for images on hover  ****************/
+.blog-posts .image:hover::after,
+.blog-posts .image2:hover::after,
+.blog-posts .image3:hover::after,
+.blog-posts .image4:hover::after {
+    display: flex;
+}
+
+.blog-posts .description h3 {
+    color: white;
+    font-size: 2rem;
+    margin: 20px;
+    transition: var(--txt-transition);
+}
+
+.blog-posts .btn {
+    width: 180px;
+    height: 40px;
+    color: white;
+    border: 2px solid var(--sec-color);
+    text-decoration: none;
+    transition: var(--txt-transition);
+    margin-top: 20px;
+}
+
+.blog-posts .btn:hover {
+    background-color: var(--sec-color);
+}
+
+.blog-posts .art-type {
+    text-decoration: none;
+
+}
+
+.blog-posts .art-type h3:hover {
+    color: var(--sec-color);
+}
+
+.blog-posts .description p {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.blog-posts .text-wrapper {
+    width: 70%;
+    text-align: center;
+    line-height: 1.6rem;
+
+}
+
+/************************************ section .about  *************************************/
+.about {
+    width: 100%;
+    background-color: var(--section-color);
+    box-sizing: border-box;
+}
+
+.about .text-wrapper {
+    text-align: center;
+    margin-top: 50px;
+    border-bottom: 2px solid #44474a8f;
+}
+
+.about .text-wrapper h2 {
+    font-size: 4.4rem;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+}
+
+.about .text-wrapper p {
+    color: white;
+    font-size: 1.2rem;
+    margin: 15px 0 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*********************************** section .about-info  *********************************/
+.about-info {
+    width: 100%;
+    height: 70vh;
+    background-color: var(--bg-color);
+}
+
+.about-info .text-wrapper {
+    width: 50%;
+    text-align: center;
+    color: white;
+    line-height: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-info .text-wrapper h2 {
+    font-size: var(--sub-title-size);
+    margin: 20px;
+    line-height: 35px;
+}
+
+.about-info .text-wrapper p {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+.subscribe {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.subscribe input {
+    width: 60%;
+    height: 55px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: var(--section-color);
+    border: none;
+    border: 1px solid var(--section-color);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.251);
+
+}
+
+.subscribe input:focus {
+    outline: none;
+    border: 1px solid var(--sec-color);
+    color: white;
+}
+
+.subscribe input::placeholder {
+    color: rgb(221, 218, 218);
+    letter-spacing: 1px;
+}
+
+.subscribe button {
+    background-color: var(--sec-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.251);
+    cursor: pointer;
+}
+
+/************************************** footer #contact  *******************************/
+footer {
+    width: 100%;
+    background-color: var(--bg-color);
+    border-top: 2px solid #44474a8f;
+    height: 25vh;
+}
+
+footer .wrapper {
+    width: 90%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mail {
+    display: flex;
+    align-items: center;
+}
+
+.mail i {
+    font-size: 1.1rem;
+    color: var(--sec-color);
+    margin-right: 4px;
+    margin-top: 2.2px;
+}
+
+.mail span {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+    margin: 10px;
+}
+
+.social-icons {
+    display: flex;
+    margin-left: -10px;
+}
+
+
+.social-icons i {
+    font-size: 1.1rem;
+    color: var(--sec-color);
+    transition: var(--txt-transition);
+    margin: 20px;
+}
+
+.social-icons a:hover i {
+    transform: scale(120%);
+}
+
+.policy {
+    color: white;
+}
+
+.policy a {
+    text-decoration: none;
+    color: white;
+    transition: var(--txt-transition);
+}
+
+.policy a:hover {
+    color: var(--sec-color);
+}
+
+.policy a::after {
+    content: '/';
+    color: white;
+}
+
+.policy a:last-child::after {
+    content: '';
+}
+
+/******************** CSS code for responsive web design optimized for laptops and desktops ********************/
+@media screen and (max-width: 1200px) {
+    .column {
+        width: 30%;
+    }
+
+    .painting-on {
+        display: none;
+    }
+
+    .painting-off {
+        display: flex;
+    }
+
+    .nav-bar ul li {
+        margin: 10px;
+    }
+
+}
+
+/************************************** CSS code for laptops ********************************************/
+@media screen and (max-width: 992px) {
+    .content {
+        min-height: 70vh;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .contact i {
+        font-size: 1.3rem;
+    }
+
+    .contact {
+        margin-left: auto;
+    }
+
+    .hamb-menu {
+        display: flex;
+    }
+
+    .nav-bar:is(.active) {
+        display: flex;
+        top: 64px;
+    }
+
+    .content .text-wrapper h1 {
+        font-size: 2.4rem;
+    }
+
+}
+
+/*************************************** CSS code for tablets  ****************************************/
+@media screen and (max-width: 768px) {
+    .content {
+        min-height: 65vh;
+    }
+
+    .blog,
+    .about {
+        height: 190px;
+    }
+
+    .gallery {
+        height: 260px;
+    }
+
+    .column {
+        width: 40%;
+    }
+
+    .painting-on {
+        display: flex;
+    }
+
+    .painting-off {
+        display: none;
+    }
+
+    .blog .text-wrapper h2,
+    .gallery .text-wrapper h2,
+    .about .text-wrapper h2 {
+        font-size: 3.8rem;
+    }
+
+    .blog .text-wrapper p,
+    .gallery .text-wrapper p,
+    .about .text-wrapper p {
+        font-size: 1.1rem;
+    }
+
+    .blog-posts .col {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .blog-posts .description {
+        order: 1;
+    }
+
+    .gallery-sorting ul li {
+        margin: 0 17px;
+    }
+
+    .gallery-sorting ul {
+        margin-top: 27px;
+    }
+
+    .mail,
+    .social-icons,
+    .policy {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .about-info .text-wrapper {
+        width: 70%;
+    }
+
+    footer {
+        height: 170px;
+    }
+
+    footer .wrapper {
+        justify-content: center;
+        padding: 15px;
+        box-sizing: border-box;
+
+    }
+
+    .subscribe {
+        width: 60%;
+    }
+}
+
+/*************************************** CSS code for phones  ****************************************/
+@media screen and (max-width: 576px) {
+    .content .text-wrapper h1 {
+        font-size: 2rem;
+        /* width: 100%; */
+
+    }
+
+    .content .txt-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content .text-wrapper {
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .content {
+        justify-content: center;
+    }
+
+    .content .wrapper {
+        width: 90%;
+    }
+
+    .about-info {
+        height: 95vh;
+    }
+
+    .main-logo {
+        width: 150px;
+    }
+
+    .gallery-sorting ul li {
+        margin: 6px 8px;
+    }
+
+    .gallery-sorting ul {
+        flex-wrap: wrap;
+        /* display: flex; */
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .gallery .text-wrapper h2,
+    .blog .text-wrapper h2,
+    .about .text-wrapper h2 {
+        font-size: 2.6rem;
+
+    }
+
+}
